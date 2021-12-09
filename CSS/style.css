@@ -5,6 +5,7 @@
   --header-color: #ffffff;
   --background-color: #2f303a;
   --not-active-color: #f5f4fa;
+  --social-icon-color: #afb1b8;
 
   --primary-text: "Roboto";
   --secondary-text: "Raleway";
@@ -47,7 +48,7 @@ a {
   padding-bottom: 94px;
 }
 
-/* Header information */
+/*=========================== Header information */
 
 .header {
   padding: 24px 0 25px;
@@ -107,18 +108,39 @@ a {
 }
 .contacts {
   color: var(--secondary-color);
+  display: flex;
+  align-items: center;
 }
 .contacts:hover,
 .contacts:focus {
   color: var(--interactive-color);
 }
+.contacts-icon {
+  margin-right: 10px;
+  fill: var(--secondary-color);
+}
+.contacts:hover svg,
+.contacts:focus svg {
+  fill: var(--interactive-color);
+}
 
-/* Business decision */
+/*==================== Business decision */
 
 .hero {
   padding: 200px 0;
   background-color: var(--background-color);
   text-align: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/background-image/bcg-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  max-width: 1600px;
+  margin: 0 auto;
 }
 .hero-title {
   font-weight: 900;
@@ -144,7 +166,7 @@ a {
   cursor: pointer;
 }
 
-/* Our benefits */
+/*=================== Our benefits */
 
 .visually-hidden {
   position: absolute;
@@ -158,13 +180,11 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.title {
-  margin-bottom: 50px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 42px;
-  text-align: center;
-  letter-spacing: 0.03em;
+.benefits-icon {
+  padding: 25px 100px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
 }
 .list-header {
   margin-bottom: 10px;
@@ -188,10 +208,18 @@ a {
   margin-right: 30px;
 }
 
-/* Our works */
+/*================== Our works */
 
 .work.section {
   padding-top: 0;
+}
+.title {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
 }
 
 /* Our team */
@@ -215,22 +243,86 @@ a {
   margin-top: 10px;
   color: var(--secondary-color);
 }
-.team-list {
+
+.team-description {
+  background-color: #fff;
+  padding: 30px 0;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.team-description {
-  background-color: #fff;
-  padding: 30px 0;
+.team-social {
+  padding: 16px 32px;
+}
+.team-social-list {
+  display: flex;
+}
+.team-social-list > li:not(:last-child) {
+  margin-right: 10px;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
 }
 
-/* Footer */
+.social-link:focus,
+.social-link:hover {
+  background-color: var(--interactive-color);
+}
+.social-link:focus > svg,
+.social-link:hover > svg {
+  fill: white;
+}
+.social-icon {
+  fill: var(--social-icon-color);
+}
+
+/* ==================== Our clients */
+
+.clients-list {
+  display: flex;
+}
+.clients-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--interactive-color);
+}
+.clients-link:hover svg,
+.clients-link:focus svg {
+  fill: var(--interactive-color);
+}
+.client-icon {
+  fill: var(--social-icon-color);
+}
+
+/*=================== Footer */
 .footer {
   margin-left: auto;
   margin-right: auto;
   background-color: var(--background-color);
   padding: 60px 0;
+}
+.style {
+  display: flex;
+}
+.address-container {
+  min-width: 231px;
+  margin-right: 70px;
 }
 .foot {
   display: inline-block;
@@ -263,9 +355,41 @@ address {
   color: var(--interactive-color);
 }
 
-/* ===========PORTFOLIO */
+.join-container > h3 {
+  color: var(--header-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-join {
+  display: flex;
+}
+.join-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.join-link:not(:last-child) {
+  margin-right: 10px;
+}
+.join-link:hover,
+.join-link:focus {
+  background-color: var(--interactive-color);
+}
+.join-link svg {
+  fill: var(--header-color);
+}
 
-/* ===========Portfolio main navigation */
+/* ================== PORTFOLIO */
+
+/* ================== Portfolio main navigation */
 .portfolio {
   padding: 94px 15px;
   width: 1200px;
@@ -320,6 +444,11 @@ address {
   margin-top: 30px;
   margin-left: 30px;
   background: var(--header-color);
+}
+.portfolio-list:hover,
+.portfolio-list:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-jpg {
   display: block;
